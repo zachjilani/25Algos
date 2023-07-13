@@ -1,5 +1,7 @@
-# pro: in place
-# con: O(n^2) runtime
+# Time
+# O(n^2)
+# Space
+# O(1)
 
 def selection(arr):
   for step in range(len(arr)):

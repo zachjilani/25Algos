@@ -1,4 +1,7 @@
-
+# Time
+# O(n)
+# Space
+# O(1)
 
 def search(arr, value):
 
@@ -13,4 +16,6 @@ val = 4
 
 res = search(l, val)
 
-print(res)
+print("the index is: " + str(res))
+
+# output = the index is: 3

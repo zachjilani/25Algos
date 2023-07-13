@@ -1,4 +1,8 @@
-
+# Time
+# O(1) best
+# O(log n) avg/ worst
+# Space
+# O(1)
 
 def search(arr, left, right, target):
 
@@ -19,5 +23,7 @@ l = [2, 5, 8, 12, 16, 23, 38, 56, 72, 91]
 target = 38
 res = search(l, 0, len(l), target)
 
-print(res)
+print("the index is: " + str(res))
+
+# output = the index is: 6
 

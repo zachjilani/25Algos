@@ -1,3 +1,7 @@
+# Time
+# O(V + E), where V is the number of nodes and E is the number of edges.
+# Space
+# O(V)
 
 graph = {
   '5' : ['3','7'],
@@ -23,5 +27,13 @@ def bfs(visited, graph, node):
         q.append(neighbor)
 
 bfs(visited, graph, '5')
+
+# output:
+# 5
+# 3
+# 7
+# 2
+# 4
+# 8
 
 

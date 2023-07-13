@@ -1,7 +1,7 @@
-# pro: O(nlog n) time
-#      O(1) space
-# con: not stable and can mess up with multiple similar values
-
+#  Time
+# O(nlog n)
+# Space
+# O(1)
 
 arr = [4, 10, 3, 5, 1]
 

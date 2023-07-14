@@ -34,9 +34,7 @@ def merge(arr):
         i += 1
 
       #if left array value is more, then the right array value
-      #goes into the original arr. however we still need to
-      #compare left[i] value with others to find its place.
-      #that is why we need to use j here
+      #goes into the original arr.
       else:
         arr[k] = right[j]
 

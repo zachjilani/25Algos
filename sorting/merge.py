@@ -4,8 +4,10 @@
 # O(n)
 
 def merge(arr):
+
   #len of 1 has nothing left to split: base case
   if len(arr) > 1:
+
     #find midpoint of array
     mid = len(arr) // 2
 

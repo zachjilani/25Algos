@@ -35,5 +35,3 @@ bfs(visited, graph, '5')
 # 2
 # 4
 # 8
-
-

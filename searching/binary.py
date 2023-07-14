@@ -26,4 +26,3 @@ res = search(l, 0, len(l), target)
 print("the index is: " + str(res))
 
 # output = the index is: 6
-

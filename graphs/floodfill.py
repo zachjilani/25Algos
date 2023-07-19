@@ -69,3 +69,49 @@ for i in range(r):
 #   [1, 1, 5, 5, 5, 5, 5, 5, 1]
 #   [1, 1, 1, 1, 1, 1, 1, 1, 1]
 # ]
+
+
+
+
+
+
+
+
+#trying to recall from memory
+# image = [
+#   [1, 1, 1, 1, 1, 1, 1, 1, 1],
+#   [1, 1, 0, 0, 0, 0, 0, 0, 1],
+#   [1, 1, 0, 0, 0, 0, 0, 0, 1],
+#   [1, 1, 0, 0, 1, 1, 0, 0, 1],
+#   [1, 1, 0, 0, 1, 1, 0, 0, 1],
+#   [1, 1, 0, 0, 1, 1, 0, 0, 1],
+#   [1, 1, 0, 0, 0, 0, 0, 0, 1],
+#   [1, 1, 0, 0, 0, 0, 0, 0, 1],
+#   [1, 1, 1, 1, 1, 1, 1, 1, 1]
+# ]
+
+# rows = 9
+# columns = 9
+
+# x_co = 4
+# y_co = 4
+
+# new_color = 3
+# old = screen[x_co][y_co]
+
+# def fillflood(screen, rows, columns, x, y, old_color, new_color):
+#   if x < 0 or x >= rows or y < 0 or y >= columns:
+#     return
+#   if screen[x][y] != old_color:
+#     return
+#   screen[x][y] = new_color
+#   fillflood(screen, rows, columns, x - 1, y, old_color, new_color)
+#   fillflood(screen, rows, columns, x + 1, y, old_color, new_color)
+#   fillflood(screen, rows, columns, x, y - 1, old_color, new_color)
+#   fillflood(screen, rows, columns, x, y + 1, old_color, new_color)
+
+
+# fillflood(image, rows, columns, x_co, y_co, old, new_color)
+
+# for i in range(rows):
+#   print(image[i])

@@ -20,7 +20,7 @@ class Graph():
     #sets a minimum to the maxint since we dont know what the dist is yet
     min = maxint
 
-
+    #for each vertice
     for u in range(self.V):
       #checking if the distance at the index is less than max int and that we havent been there
       if dist[u] < min and shortest_path_set[u] == False:
@@ -41,7 +41,7 @@ class Graph():
     for cout in range(self.V):
       #get the index of the closest vertice that hasnt been visited
       x = self.min_dist(dist, shortest_path_set)
-      #set it to visited
+      #set index to visited
       shortest_path_set[x] = True
 
       #for every vertice:
@@ -57,12 +57,12 @@ class Graph():
 #number of vertices
 g = Graph(6)
 #number of edges for each vertice
-g.graph = [[0,4,5,0,0,0],
-        [4,0,11,9,7,0],
-        [5,11,0,0,3,0],
-        [0,9,0,0,13,2],
-        [0,7,3,13,0,6],
-        [0,0,0,2,6,0],
+g.graph = [[0,4,5,0,0,0], #vertice 0
+        [4,0,11,9,7,0], #vertice 1
+        [5,11,0,0,3,0], #vertice 2
+        [0,9,0,0,13,2], #vertice 3
+        [0,7,3,13,0,6], #vertice 4
+        [0,0,0,2,6,0],  #vertice 5
         ];
-
+#starting vertice
 g.dijkstra(0)

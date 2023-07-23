@@ -33,5 +33,13 @@ int main()
   int size = 10;
   int target = 38;
   int res = binarySearch(l, 0, 10, target);
-  cout << res << endl;
+
+  if (res == -1)
+  {
+    cout << "number not found" << endl;
+  }
+  else
+  {
+    cout << res << endl;
+  }
 }

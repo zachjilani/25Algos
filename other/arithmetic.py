@@ -1,61 +1,61 @@
-#5 + 4 * 4 + 3 * 3
-#5 + 16 + 9
-#30
+"""
+If the current token is a '(', add a new node as the left child of the current node, and descend to the left child.
 
-q = '5 + 4 * 4 + 3 * 3'.replace(" ", "")
+If the current token is in the list ['+','-','/','*'], set the root value of the current node to the operator
+represented by the current token. Add a new node as the right child of the current node and descend to the right child.
 
-def add(a, b):
-    return a + b
-def sub(a, b):
-    return a - b
-def mul(a, b):
-    return a*b
-def div(a, b):
-    return a/b
+If the current token is a number, set the root value of the current node to the number and return to the parent.
 
+If the current token is a ')', go to the parent of the current node.
+"""
 
-exp = []
-for i in range(len(q)):
-    exp.append(q[i])
+#Just using these precreated data structures as opposed to building from scractch
+from pythonds.basic import Stack
+from pythonds.trees import BinaryTree
+import operator
 
-for i in range(len(exp)):
-    try:
-        if int(exp[i]):
-            exp[i] = int(exp[i])
-    except:
-        continue
+def evaluate(parse_tree):
+    ops = {'+': operator.add, '-': operator.sub, '*': operator.mul, '/': operator.truediv}
+    left = parse_tree.getLeftChild()
+    right = parse_tree.getRightChild()
 
-print("exp before : ", exp)
-copied = exp.copy()
+    if left and right:
+        func = ops[parse_tree.getRootVal()]
+        return func(evaluate(left), evaluate(right))
+    else:
+        return parse_tree.getRootVal()
 
+def build_parse_tree(exp):
+    L = exp.split()
+    exp_stack = Stack()
+    exp_tree = BinaryTree('')
+    exp_stack.push(exp_tree)
+    current_tree = exp_tree
 
-for i in range(len(exp)):
-    try:
-        if copied[i] == '*':
-            exp[i - 1] *= exp[i + 1]
-            exp[i] = 'R'
-            exp[i + 1] = 'R'
-    except:
-        break
-while('R' in exp):
-    exp.remove('R')
+    for i in L:
+        if i == '(':
+            current_tree.insertLeft('')
+            exp_stack.push(current_tree)
+            current_tree = current_tree.getLeftChild()
+        elif i in ['+','-','*','/']:
+            current_tree.setRootVal(i)
+            current_tree.insertRight('')
+            exp_stack.push(current_tree)
+            current_tree = current_tree.getRightChild()
+        elif i == ')':
+            current_tree = exp_stack.pop()
+        elif i not in ['+','-','*','/', ')']:
+            try:
+                current_tree.setRootVal(int(i))
+                parent = exp_stack.pop()
+                current_tree = parent
+            except ValueError:
+                raise ValueError("toke '{}' is not a valid integer".format(i))
+    return exp_tree
 
-copied = exp.copy()
+e = build_parse_tree("( ( 10 + 5 ) * 3 )")
 
-for i in range(len(exp)):
-    try:
-        if copied[i] == '+':
-            exp[i - 1] += exp[i + 1]
-            exp[i] = 'R'
-            exp[i + 1] = 'R'
-    except:
-        break
-while('R' in exp):
-    exp.remove('R')
-
-print("exp after: ", exp)
-print("copied: ", copied)
-
+print(evaluate(e))
 
 
 

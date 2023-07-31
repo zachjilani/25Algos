@@ -14,4 +14,15 @@ test = 4
 print(add_squares(test))
 
 
+def test1(z):
+    return 2*test(z - 1)
+
+def test(n):
+    if n == 0:
+        return 0
+    else:
+        return test1(n - 1) + 1
+    
+print(test1(3))
+
 

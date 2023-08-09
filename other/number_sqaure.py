@@ -22,7 +22,7 @@ def test(n):
         return 0
     else:
         return test1(n - 1) + 1
-    
+
 print(test1(3))
 
 
